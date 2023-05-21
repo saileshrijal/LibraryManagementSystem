@@ -7,7 +7,7 @@
     var currentController = ViewContext.RouteData.Values["controller"] as string;
     var currentAction = ViewContext.RouteData.Values["action"] as string;
 
-    var image = loggedInUser?.ImageUrl == null ? "/defaultImage/avatar.png" : "/uploads/user/"+loggedInUser.ImageUrl;
+    var image = loggedInUser?.ImageUrl == null ? "/defaultImage/avatar.png" : "/uploads/user/" + loggedInUser.ImageUrl;
 }
 
 <!DOCTYPE html>
@@ -20,6 +20,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>@ViewData["Title"] - @AppConstants.Name</title>
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="~/theme/css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -33,7 +34,7 @@
         <a class="navbar-brand ps-3 d-flex align-items-center gap-2" asp-controller="Home" asp-action="Index">
             <img src="/img/logo.png" width="30px" height="30" alt="@AppConstants.Name">
             @AppConstants.Name
-            </a>
+        </a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
                 class="fas fa-bars"></i></button>
@@ -44,8 +45,9 @@
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false"><img src="@image" height="30px" width="30px" class="rounded bg-white" style="object-fit: cover; object-position: center;">
-                    </a>
+                    aria-expanded="false"><img src="@image" height="30px" width="30px" class="rounded bg-white"
+                        style="object-fit: cover; object-position: center;">
+                </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" asp-controller="Profile" asp-action="Index">My Profile</a></li>
                     <li>
