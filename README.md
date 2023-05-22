@@ -75,5 +75,5 @@ Build project is located on bin directory
 
 ## Demo
 
-Website Link Coming Soon
+Link: http://elibrary.somee.com/
 
